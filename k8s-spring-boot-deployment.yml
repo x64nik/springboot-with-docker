@@ -13,7 +13,7 @@ spec:
         app: springboot-with-docker-demo
     spec:
       containers:
-        - name: springboot
+        - name: springboot-with-docker-demo
           image: x64nik/springboot-with-docker-demo:springboot-with-docker-demo
           ports:
             - containerPort: 8080
