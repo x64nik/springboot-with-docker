@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-with-docker-demo
+  name: testing-springboot-with-docker-demo
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: springboot-with-docker-demo
+      app: testing-springboot-with-docker-demo
   template:
     metadata:
       labels:
-        app: springboot-with-docker-demo
+        app: testing-springboot-with-docker-demo
     spec:
       containers:
-        - name: springboot-with-docker-demo
-          image: x64nik/springboot-with-docker-demo:springboot-with-docker-demo
+        - name: testing-springboot-with-docker-demo
+          image: x64nik/springboot-with-docker-demo:testing-springboot-with-docker-demo
           ports:
             - containerPort: 8080
           env:
@@ -24,11 +24,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: springboot-with-docker-demo
+  name: testing-springboot-with-docker-demo
 spec:
   type: NodePort
   ports:
     - port: 80
       targetPort: 8080
   selector:
-    app: springboot-with-docker-demo
+    app: testing-springboot-with-docker-demo
